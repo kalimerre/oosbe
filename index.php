@@ -3,7 +3,8 @@
     ini_set('display_errors', 'On');
     session_start();
     
-    $user = "5";
+    // $user = "5";
+    $user = $_GET['id'];
     
     require('facebook-php-sdk-v4-4.0-dev/autoload.php');
     
