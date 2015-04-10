@@ -30,6 +30,8 @@
             try{
                 $user_profile = (new FacebookRequest($session, 'GET', '/me'))->execute()->getGraphObject(GraphUser::className());
                 echo "Nom : ". $user_profile->getName();
+                echo "<br />";
+                echo "ID : ". $user_profile->getId();
                 
             }
             catch(FacebookRequestException $e){
@@ -67,11 +69,6 @@
           </script>
     </head>
     <body>
-        <div
-            class="fb-like"
-            data-share="true"
-            data-width="450"
-            data-show-faces="true">
-        </div>
+    
     </body>
 </html>
