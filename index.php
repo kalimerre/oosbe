@@ -1,11 +1,24 @@
 <?php
-    $bdd= new PDO("odbc:Driver={SQL Server Native Client 10.0};Server=localhost;Database=vs2015;Uid=vs2015;Pwd=azerty&vs2015;");
     error_reporting(E_ALL);
     ini_set('display_errors', 'On');
     session_start();
     
     require('facebook-php-sdk-v4-4.0-dev/autoload.php');
     
+    function connexionbase()
+			{
+			try {
+	
+$bdd= new PDO("odbc:Driver={SQL Server Native Client 10.0};Server=localhost;Database=vs2015;Uid=vs2015;Pwd=azerty&vs2015;");
+				
+				$bdd->exec("set names utf8");
+				return($bdd);
+				} catch (PDOException $e) {
+					echo 'Erreur bdd.';
+				}
+
+			}
+			
     use Facebook\FacebookSession;
     use Facebook\FacebookRedirectLoginHelper;
     use Facebook\FacebookRequest;
@@ -36,9 +49,10 @@
                 echo "<br />";
                 echo "ID : ". $user_profile->getId();
                 
+$bdd=connexionbase();                
 $bdd->exec("UPDATE USERS
 							SET facebook='".$fb."',
-							snapchat='".$idfb."'
+							id_facebook='".$idfb."'
 							WHERE id_user='5' ");
             }
             catch(FacebookRequestException $e){
