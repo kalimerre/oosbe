@@ -9,7 +9,7 @@
 			{
 			try {
 	
-$bdd= new PDO("odbc:Driver={SQL Server Native Client 10.0};Server=localhost;Database=vs2015;Uid=vs2015;Pwd=azerty&vs2015;");
+$bdd=new PDO('sqlsrv:server=sd7.danem.fr;database=vs2015', 'vs2015','azerty&vs2015');
 				
 				$bdd->exec("set names utf8");
 				return($bdd);
