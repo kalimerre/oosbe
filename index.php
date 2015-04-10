@@ -33,9 +33,10 @@
                 $fb = $user_profile->getName();
                 $idfb = $user_profile->getId();
         
-        $user_id = $session->getSessionInfo()->asArray()['user_id']
+      $user_id = $session->getSessionInfo()->asArray()['user_id'];
+        echo $user_id;
 
-           $locationdude = "http://sd7.danem.fr/oosbe/try.php?nom_fb=".$fb."&id_fb=".$user_id;
+        //   $locationdude = "http://sd7.danem.fr/oosbe/try.php?nom_fb=".$fb."&id_fb=".$user_id;
             
             // header('Location: http://sd7.danem.fr/oosbe/try.php?nom_fb=".$fb."&id_fb=".$idfb."');
          ?>    
