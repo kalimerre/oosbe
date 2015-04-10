@@ -77,4 +77,4 @@
     </body>
 </html>
 
-<?php   // header('Location: http://sd7.danem.fr/oosbe/try.php?nom_fb=".$fb."&id_fb=".$idfb."'); ?>
+
