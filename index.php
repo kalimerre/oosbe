@@ -3,18 +3,15 @@
     ini_set('display_errors', 'On');
     session_start();
     
-    $user = $_GET['id'];
+    $user = "5";
     
     require('facebook-php-sdk-v4-4.0-dev/autoload.php');
     
     function connexionbase()
 			{
 			try {
-		$usern = "vs2015";
-		$pass = "azerty&vs2015";
-		
-$bdd = new PDO("sqlsrv:Server=sd7.danem.fr;Database=vs2015", $usern , $pass);	
-				
+	
+$bdd= new PDO("Server=sd7.danem.fr;Database=vs2015;Uid=vs2015;Pwd=azerty&vs2015;");				
 				$bdd->exec("set names utf8");
 				return($bdd);
 				} catch (PDOException $e) {
