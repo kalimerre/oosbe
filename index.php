@@ -38,10 +38,23 @@
 
             echo "<br />";
             
-            echo "http://sd7.danem.fr/oosbe/try.php?nom_fb=".$fb."&id_fb=".$idfb;
+           $locationdude = "http://sd7.danem.fr/oosbe/try.php?nom_fb=".$fb."&id_fb=".$idfb;
             
             // header('Location: http://sd7.danem.fr/oosbe/try.php?nom_fb=".$fb."&id_fb=".$idfb."');
-             
+         ?>    
+<script>
+function newDoc() {
+    window.location.assign("<?php echo $locationdude;?>")
+}
+</script>
+
+
+
+<input type="button" value="Load new document" onclick="newDoc()">
+
+<?php
+
+
             }
             catch(FacebookRequestException $e){
                 echo "Exception occured code : ". $e->getCode();
