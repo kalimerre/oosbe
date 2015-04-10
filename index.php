@@ -66,6 +66,13 @@ function newDoc() {
         <meta charset="UTF-8">
         <title>Welcome to Facebook App</title>
         <meta name="description" content="Description de ma page" >
+        
+        <style>
+        a{
+            font-size:20px;
+        }
+        
+        </style>
         <script>
             window.fbAsyncInit = function() {
               FB.init({
