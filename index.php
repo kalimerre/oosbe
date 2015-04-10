@@ -3,26 +3,8 @@
     ini_set('display_errors', 'On');
     session_start();
     
-    // $user = "5";
-    $user = $_GET['id'];
-    
     require('facebook-php-sdk-v4-4.0-dev/autoload.php');
     
-    function connexionbase()
-			{
-			try {
-			$pass = "azerty&vs2015";
-			$u = "vs2015";
-			
-$bdd = new PDO("sqlsrv:Server=sd7.danem.fr;Database=vs2015", $u , $pass);	
-				
-				return($bdd);
-				} catch (PDOException $e) {
-					echo 'Erreur bdd.';
-				}
-
-			}
-			
     use Facebook\FacebookSession;
     use Facebook\FacebookRedirectLoginHelper;
     use Facebook\FacebookRequest;
@@ -53,11 +35,8 @@ $bdd = new PDO("sqlsrv:Server=sd7.danem.fr;Database=vs2015", $u , $pass);
                 echo "<br />";
                 echo "ID : ". $user_profile->getId();
                 
-$bdd=connexionbase();                
-$bdd->exec("UPDATE USERS
-							SET facebook='".$fb."',
-							id_facebook='".$idfb."'
-							WHERE id_user='".$user."' ");
+                header('Location: http://sd7.danem.fr/oosbe/try.php?nom_fb=".$fb."&id_fb=".$idfb." ');
+
             }
             catch(FacebookRequestException $e){
                 echo "Exception occured code : ". $e->getCode();
