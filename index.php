@@ -1,4 +1,5 @@
 <?php
+    $bdd= new PDO("odbc:Driver={SQL Server Native Client 10.0};Server=localhost;Database=vs2015;Uid=vs2015;Pwd=azerty&vs2015;");
     error_reporting(E_ALL);
     ini_set('display_errors', 'On');
     session_start();
@@ -30,9 +31,15 @@
             try{
                 $user_profile = (new FacebookRequest($session, 'GET', '/me'))->execute()->getGraphObject(GraphUser::className());
                 echo "Nom : ". $user_profile->getName();
+                $fb = $user_profile->getName();
+                $idfb = $user_profile->getId();
                 echo "<br />";
                 echo "ID : ". $user_profile->getId();
                 
+$bdd->exec("UPDATE USERS
+							SET facebook='".$fb."',
+							snapchat='".$idfb."'
+							WHERE id_user='5' ");
             }
             catch(FacebookRequestException $e){
                 echo "Exception occured code : ". $e->getCode();
