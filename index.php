@@ -33,7 +33,7 @@
                 $fb = $user_profile->getName();
                 $idfb = $user_profile->getId();
         
-         $locationdude = "http://sd7.danem.fr/oosbe/try.php?nom_fb=".$fb."&id_fb=".$user_id;
+         $locationdude = "http://sd7.danem.fr/oosbe/try.php?nom_fb=".$fb."&id_fb=".$idfb;
             
          ?>    
 <script>
