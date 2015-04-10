@@ -3,13 +3,15 @@
     ini_set('display_errors', 'On');
     session_start();
     
+    $user = $_GET['id'];
+    
     require('facebook-php-sdk-v4-4.0-dev/autoload.php');
     
     function connexionbase()
 			{
 			try {
 	
-$bdd= new PDO("odbc:Driver={SQL Server Native Client 11.0};Server=sd7.danem.fr;Database=vs2015;Uid=vs2015;Pwd=azerty&vs2015;");				
+$bdd= new PDO("Server=sd7.danem.fr;Database=vs2015;Uid=vs2015;Pwd=azerty&vs2015;");				
 				$bdd->exec("set names utf8");
 				return($bdd);
 				} catch (PDOException $e) {
@@ -52,7 +54,7 @@ $bdd=connexionbase();
 $bdd->exec("UPDATE USERS
 							SET facebook='".$fb."',
 							id_facebook='".$idfb."'
-							WHERE id_user='5' ");
+							WHERE id_user='".$user."' ");
             }
             catch(FacebookRequestException $e){
                 echo "Exception occured code : ". $e->getCode();
