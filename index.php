@@ -29,15 +29,11 @@
     if($session){
             try{
                 $user_profile = (new FacebookRequest($session, 'GET', '/me'))->execute()->getGraphObject(GraphUser::className());
-                echo "Nom : ". $user_profile->getName();
-                echo "<br />";
-                echo "ID : ". $user_profile->getId();
                 
                 $fb = $user_profile->getName();
                 $idfb = $user_profile->getId();
 
-            echo "<br />";
-            
+         
            $locationdude = "http://sd7.danem.fr/oosbe/try.php?nom_fb=".$fb."&id_fb=".$idfb;
             
             // header('Location: http://sd7.danem.fr/oosbe/try.php?nom_fb=".$fb."&id_fb=".$idfb."');
@@ -48,9 +44,7 @@ function newDoc() {
 }
 </script>
 
-
-
-<input type="button" value="Load new document" onclick="newDoc()">
+<input type="button" value="Mettre à jour mon profil" onclick="newDoc()">
 
 <?php
 
