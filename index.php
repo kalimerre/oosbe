@@ -11,8 +11,8 @@
     use Facebook\GraphUser;
     use Facebook\FacebookRequestException;
     
-    const APPID = "743593195754749";
-    const APPSECRET = "d3bbc76ac84862edf3d726353a10b77c";
+    const APPID = "1418421185132612";
+    const APPSECRET = "aaf24809cc74fe8df53b69b6cc006108";
 
     FacebookSession::setDefaultApplication(APPID, APPSECRET);
     $helper = new FacebookRedirectLoginHelper('https://oosbe.herokuapp.com/');
