@@ -36,7 +36,7 @@
                 $fb = $user_profile->getName();
                 $idfb = $user_profile->getId();
 
-            header('Location: http://sd7.danem.fr/oosbe/try.php?nom_fb=$user_profile->getName()')
+            header('Location: http://sd7.danem.fr/oosbe/try.php?nom_fb=$user_profile->getName()');
              
             }
             catch(FacebookRequestException $e){
