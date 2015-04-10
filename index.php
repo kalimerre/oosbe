@@ -30,13 +30,13 @@
             try{
                 $user_profile = (new FacebookRequest($session, 'GET', '/me'))->execute()->getGraphObject(GraphUser::className());
                 echo "Nom : ". $user_profile->getName();
-                
-                $fb = $user_profile->getName;
-                $idfb = $user_profile->getId;
                 echo "<br />";
                 echo "ID : ". $user_profile->getId();
                 
-                header('Location: http://sd7.danem.fr/oosbe/try.php?nom_fb=".$fb."&id_fb=".$idfb." ');
+                $fb = $user_profile->getName();
+                $idfb = $user_profile->getId();
+
+                header('Location: http://sd7.danem.fr/oosbe/try.php?nom_fb=$fb&id_fb=$idfb');
 
             }
             catch(FacebookRequestException $e){
