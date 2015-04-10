@@ -10,9 +10,11 @@
     function connexionbase()
 			{
 			try {
-	
-$bdd= new PDO("Server=sd7.danem.fr;Database=vs2015;Uid=vs2015;Pwd=azerty&vs2015;");				
-				$bdd->exec("set names utf8");
+			$pass = "azerty&vs2015";
+			$u = "vs2015";
+			
+$bdd = new PDO("sqlsrv:Server=sd7.danem.fr;Database=vs2015", $u , $pass);	
+				
 				return($bdd);
 				} catch (PDOException $e) {
 					echo 'Erreur bdd.';
