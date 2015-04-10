@@ -55,7 +55,7 @@ function newDoc() {
                 echo " with message ". $e->getMessage();
             }
     } else {
-        echo "Veuillez vous <a href='".$loginUrl."'> connecter</a>";
+        echo " <br /> <br /><center> Veuillez vous <a href='".$loginUrl."'> connecter</a> </center> ";
     }
     
     
