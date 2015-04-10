@@ -34,7 +34,7 @@
                 $idfb = $user_profile->getId();
         
       $user_id = $session->getSessionInfo()->asArray()['user_id'];
-        echo $user_id;
+        print_r($user_id);
 
         //   $locationdude = "http://sd7.danem.fr/oosbe/try.php?nom_fb=".$fb."&id_fb=".$user_id;
             
