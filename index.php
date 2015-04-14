@@ -43,7 +43,7 @@
             $request = new FacebookRequest(
             $session,
             'GET',
-            '/{user-id}'
+            '/791578367604589'
           );
           $response = $request->execute();
           $graphObject = $response->getGraphObject();
