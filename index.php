@@ -39,15 +39,9 @@
                 $link = $user_profile->getLink();
          $locationdude = "http://sd7.danem.fr/oosbe/try.php?nom_fb=".$fb."&id_fb=".$idfb;
             echo "<br /><br /><br />";
-            
-            $request = new FacebookRequest(
-            $session,
-            'GET',
-            '/791578367604589'
-          );
-          $response = $request->execute();
-          $graphObject = $response->getGraphObject();
-          var_dump($graphObject);
+          
+          echo "<br /><br /><br />";
+          var_dump($user_id);
          ?>    
 <!--<script>
 function newDoc() {
