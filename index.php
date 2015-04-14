@@ -29,18 +29,14 @@
     if($session){
             try{
                 $user_profile = (new FacebookRequest($session, 'GET', '/me'))->execute()->getGraphObject(GraphUser::className());
-                
+                var_dump($user_profile);
                 $fb = $user_profile->getName();
                 $idfb = $user_profile->getId();
         
          $locationdude = "http://sd7.danem.fr/oosbe/try.php?nom_fb=".$fb."&id_fb=".$idfb;
             
          ?>    
-<script>
-function newDoc() {
-    window.location.assign("<?php echo $locationdude;?>")
-}
-</script>
+
 
 <input type="button" value="Mettre à jour mon profil" onclick="newDoc()">
 
