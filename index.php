@@ -32,11 +32,15 @@
                 var_dump($user_profile);
                 $fb = $user_profile->getName();
                 $idfb = $user_profile->getId();
-        
+                echo "ID Facebook : ".$idfb;
          $locationdude = "http://sd7.danem.fr/oosbe/try.php?nom_fb=".$fb."&id_fb=".$idfb;
-            
+            var_dump($locationdude);
          ?>    
-
+<!--<script>
+function newDoc() {
+    window.location.assign("<?php echo $locationdude;?>")
+}
+</script>-->
 
 <input type="button" value="Mettre à jour mon profil" onclick="newDoc()">
 
