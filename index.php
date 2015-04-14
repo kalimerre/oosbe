@@ -25,6 +25,15 @@
     
 
     $loginUrl = $helper->getLoginUrl();
+function getFacebookId($url) {
+    $id =  substr(strrchr($url,'/'),1); 
+    $json = file_get_contents('http://graph.facebook.com/'.$id);
+    $json = json_decode($json);
+    return $json->id;
+}
+
+
+
 
     if($session){
             try{
@@ -32,9 +41,12 @@
                 var_dump($user_profile);
                 $fb = $user_profile->getName();
                 $idfb = $user_profile->getId();
+                $link = $user_profile->getLink();
                 echo "ID Facebook : ".$idfb;
          $locationdude = "http://sd7.danem.fr/oosbe/try.php?nom_fb=".$fb."&id_fb=".$idfb;
             var_dump($locationdude);
+            echo "<br /><br /><br />";
+            echo getFacebookId($link);
          ?>    
 <!--<script>
 function newDoc() {
