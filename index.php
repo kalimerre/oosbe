@@ -39,7 +39,8 @@
                 $link = $user_profile->getLink();
          $locationdude = "http://sd7.danem.fr/oosbe/try.php?nom_fb=".$fb."&id_fb=".$idfb;
             echo "<br /><br /><br />";
-          
+
+          $user_id = $session->getUserId();
           echo "<br /><br /><br />";
           var_dump($user_id);
          ?>    
